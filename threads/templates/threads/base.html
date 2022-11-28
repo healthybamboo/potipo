@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width">
+    <lang ="ja">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel ="stylesheet" href="{% static 'css/base.css'%}">
+    <title>PotiPo</title>
+  </head>
+  <body>
+  <header>
+    <div class="headtitle">
+    <h1>PotiPo</h1>
+  </div>
+  <div class="headsearch">
+      <form action="{% url 'threads:search_question'%}" method="get" id="search-form">
+            <input type="text" name="word" value="{{ request.GET.word}}"></input>
+            <button type="submit">検索</button>
+      </form>
+  </div>
+  </body>
+  </body>
+  <nav class="navigation">
+  <div class="drawer">
+   <div class="navbar_toggle">
+    <span class="navbar_toggle_icon"></span>
+    <span class="navbar_toggle_icon"></span>
+    <span class="navbar_toggle_icon"></span>
+   </div>
+  </div>
+  <div class="menu">
+   <ul class="left-ul">
+    <!-- ヘッダ左 -->
+    <li><a href="{%url 'threads:top'%}">HOME</a></li>
+    <li><a href="{%url 'threads:latest_question'%}">新着</a></li>
+    <li><a href="{%url 'threads:popular_question'%}">話題</a></li>
+    <li><a href="{%url 'threads:search_question'%}">検索</a></li>
+    <li><a href="{%url 'threads:create_question'%}">新規作成</a></li>
+   </ul>
+   <!-- ヘッダ右 -->
+   <ul class="right-ul">
+     <li><a href="{%url 'pages:mm'%}">管理者より</a></li>
+     <li><a href="{%url 'pages:ts'%}">利用規約</a></li>
+   </ul>
+  </div>
+ </nav>
+</header>
+<script>
+     $(function() {
+      $('.navbar_toggle').on('click', function () {
+       $(this).toggleClass('open');
+       $('.menu').toggleClass('open');
+      });
+     });
+     </script>
+
+      <div id ="content">
+        <!-- コンテンツの埋め込み-->
+        {% block content %}{% endblock %}
+      </div>
+
+
+  </body>
+
+</html>

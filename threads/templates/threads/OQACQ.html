@@ -1,0 +1,35 @@
+{% extends 'threads/base.html' %}
+{% load static %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/content.css' %}">
+  <div id ="content">
+    <div id="questions" class="board">
+      <h1 class="list-title">同一質問一覧</h1>
+      <h2 id="questiontext">{{ oriquestion.text }}</h2>
+      <ul class="questions">
+        <li class="question"
+            onclick="location.href='{% url 'threads:detail_question' oriquestion.id %}'">
+          <p class="info1">回答数: {{ oriquestion.all_answer_numbers }}</p>
+          <p class="info3">{{ oriquestion.created_time|date:"Y/m/d" }}~{{ oriquestion.reply_dead_line|date:"Y/m/d" }}</p>
+        </li>
+        {% for question in cloquestions %}
+          <li class="question"
+              onclick="location.href='{% url 'threads:detail_question' question.id %}">
+            <p class="info1">回答数: {{ question.all_answer_numbers }}</p>
+            <p class="info3">{{ question.created_time|date:"Y/m/d" }} ~ {{ question.reply_dead_line|date:"Y/m/d" }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      <form action="{% url 'threads:cc' %}" class="btnzone" method="POST">
+        {% if active %}
+        {% else %}
+          {% csrf_token %}
+          <button type="submit"
+                  id="btn"
+                  name="original_quesion"
+                  value="{{ oriquestion.id }}">クローンを作成！</button>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+{% endblock %}

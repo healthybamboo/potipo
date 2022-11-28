@@ -1,0 +1,241 @@
+{% extends 'threads/base.html' %}
+{% load static %}
+{% load url_replace %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/content.css' %}">
+  <div id ="content">
+    <div class="board">
+      <h1 class="list-title">検索</h1>
+      <form action="{% url 'threads:search_question' %}" method="get">
+        <div id="word">
+          <p>
+            <input type="text"
+                   placeholder="検索ワード"
+                   name="word"
+                   value="{{ request.GET.word }}">
+          </input>
+        </p>
+      </div>
+      <div id="status">
+        <p>
+          <input type="radio" name="active" value="None" checked>
+        </input>
+        <label>指定なし</label>
+        <p>
+          <input type="radio" name ="active" value="True">
+        </input>
+        <label>投票中</label>
+      </p>
+      <p>
+        <input type="radio" name="active" value="False">
+      </input>
+      <label>投票終了</label>
+    </p>
+  </div>
+  <div id ="category">
+    <p>
+      {{ form.parent_category }}
+      <label>カテゴリ（大）</label>
+    </p>
+    <p>
+      {{ form.category }}
+      <label>カテゴリ(小)</label>
+    </div>
+  </p>
+  <div id="orderzone">
+    <select name="order" id="order">
+      <option value="0">
+        回答数が多い順
+      </option>
+      <option value="1">
+        回答数が少ない順
+      </option>
+      <option value="2">
+        新しい順
+      </option>
+      <option value="3">
+        古い順
+      </option>
+    </select>
+  </div>
+  <div class="btnzone">
+    <button type="submit" id="btn">検索</button>
+  </div>
+</form>
+<script>
+          function triggerEvent(element, event) {
+             if (document.createEvent) {
+                 // IE以外
+                 var evt = document.createEvent("HTMLEvents");
+                 evt.initEvent(event, true, true ); // event type, bubbling, cancelable
+                 return element.dispatchEvent(evt);
+             } else {
+                 // IE
+                 var evt = document.createEventObject();
+                 return element.fireEvent("on"+event, evt)
+             }
+          }
+
+            // もし上の値が存在するならば処理の後で、option追加するときにselectする
+            const parentCategoryElement = document.getElementById('id_parent_category');
+
+            const categoryElement = document.getElementById('id_category');
+
+            const orderElement = document.getElementById('order');
+
+            while(categoryElement.firstChild){
+                categoryElement.removeChild(categoryElement.lastChild);
+              };
+
+            const categories = {
+              {% for pc in parentcategory%}
+                '{{pc.pk}}':[
+                  {% for c in pc.category_set.all %}
+                    {
+                      'pk':'{{c.pk}}',
+                      'name':'{{ c.name}}'
+                    },
+                  {% endfor %}
+                ],
+                {% endfor %}
+            };
+            // console.log(categories);
+            function changeCategory(select){
+
+              while(categoryElement.firstChild){
+                categoryElement.removeChild(categoryElement.lastChild);
+              };
+
+              const parentId = parentCategoryElement.value;
+              const categoryList = categories[parentId];
+              for(let i=0 ; i<categoryList.length ;i++){
+                const category = categoryList[i];
+                const option = document.createElement('option');
+                  if(i == 0){
+                    const optionfirst = document.createElement('option');
+                    optionfirst.value = '';
+                    optionfirst.textContent = '--------- ';
+                    categoryElement.appendChild(optionfirst);
+
+                  }
+                    option.value = category['pk'];
+                    option.textContent  = category['name'];
+                    categoryElement.appendChild(option);
+
+              }
+              if(select !== undefined){
+                categoryElement.value (select);
+              }
+            };
+
+
+            parentCategoryElement.addEventListener('change',()=>{
+              changeCategory();
+            } );
+
+            if(parentCategoryElement.value){
+              const selectedCategory = categoryElement.value;
+              changeCategory(selectedCategory);
+            }
+
+
+
+            {% if request.GET.active %}
+            const active = document.getElementsByName('active');
+            switch ('{{request.GET.active}}') {
+              case 'None':
+                active[0].checked = true;
+                break;
+              case 'True':
+                active[1].checked = true;
+                break;
+              case 'False':
+                active[2].checked = true;
+                break;
+
+              default:
+                break;
+            }
+
+
+            {% endif %}
+
+            {% if request.GET.parent_category %}
+              for(let i =0; i < parentCategoryElement.options.length;i++){
+                if(parentCategoryElement.options[i].value == {{request.GET.parent_category}}){
+                  // parentCategoryElement[parentCategoryElement.selectedIndex].selected = false;
+                  parentCategoryElement.selectedIndex = i;
+                  triggerEvent(parentCategoryElement,'change');
+                  break;
+                }
+              };
+            {% endif %}
+            {% if request.GET.category %}
+              for(let i =0; i < categoryElement.options.length;i++){
+                if(categoryElement.options[i].value == {{request.GET.category}}){
+                  // parentCategoryElement[parentCategoryElement.selectedIndex].selected = false;
+                  categoryElement.selectedIndex = i;
+                  triggerEvent(categoryElement,'change');
+                  break;
+                }
+              };
+            {% endif %}
+            {% if request.GET.order %}              orderElement.selectedIndex = {{request.GET.order}};{% endif %}
+
+            const pl = document.getElementsByClassName('page-link');
+            pl.addEventListener('click',()=>{
+              console.log('PL');
+            })
+
+</script>
+</div>
+<div class="board">
+  <h1 class="list-title">検索結果</h1>
+  <ul class="questions">
+    {% if questions|length == 0 %}
+      <h1>条件に一致する質問が見つかりませんでした　m(_ _)m</h1>
+    {% else %}
+      {% for ob in questions %}
+        <li class="question"
+            onclick="location.href='{% url 'threads:detail_question' ob.id %}">
+          <p class="info1">回答数{{ ob.all_answer_numbers }}</p>
+          <p class="text">{{ ob.text| truncatechars:30 }}</p>
+          <p class="info2">{{ ob.created_time|date:"Y/m/j" }}～</p>
+        </li>
+      {% endfor %}
+    {% endif %}
+    {% if questions.has_other_pages %}
+      <div class="link">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            {% if questions.has_previous %}
+              <li>
+                <a class="page-link"
+                   href="?{%  url_replace request 'page' questions.previous_page_number %}"> < </a>
+              </li>
+            {% else %}
+              <li>
+                <div class="page-link-disabled" href="#">
+                  <
+                </div>
+              </li>
+            {% endif %}
+            <li class="where">{{ questions.number }} / {{ page_num }}</li>
+            {% if questions.has_next %}
+              <li>
+                <a class="page-link"
+                   href="?{% url_replace request 'page' questions.next_page_number %}">></a>
+              </li>
+            {% else %}
+              <li>
+                <div class="page-link-disabled " href="#">></div>
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    {% endif %}
+  </ul>
+</div>
+</div>
+{% endblock %}

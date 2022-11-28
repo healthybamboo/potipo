@@ -1,0 +1,25 @@
+{% extends 'threads/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/vote.css' %}">
+    <link rel="stylesheet" href="{% static 'css/content.css' %}">
+    <div class="board">
+        <h1 class="list-title">理由</h1>
+        <p class="votetitle">A.{{ answer.text }}</p>
+        <form action="{% url 'threads:vr' %}" id ="voteform" method="POST">
+            {% for reason in reasons %}
+                {% csrf_token %}
+                <p>
+                    <button type="submit" class="votebtn" name="id" value ="{{ reason.id }}">{{ reason.text }}</button>
+                </p>
+            {% endfor %}
+        </form>
+        {% if answer.parent_question.let_reason_add %}
+            <div class="link">
+                <a id="morelink" href="{% url 'threads:cr' answer.id %}">理由を追加</a>
+            </div>
+        {% else %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

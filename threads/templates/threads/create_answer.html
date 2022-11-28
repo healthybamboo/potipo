@@ -1,0 +1,17 @@
+{% extends 'threads/base.html' %}
+{% load static %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/createA.css' %}">
+  <div id="createansform">
+    <h1 class="list-title">選択肢を作成</h1>
+    <p id="question">Q.{{ question.text }}</p>
+    <form action="{% url 'threads:ca' question.id %}"
+          id="ansform"
+          method="POST">
+      {% csrf_token %}
+      {{ form.text }}
+    </br>
+    <button type="submit">作成</button>
+  </form>
+</div>
+{% endblock %}

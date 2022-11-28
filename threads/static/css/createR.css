@@ -1,0 +1,64 @@
+/*ここまでは共通部分*/
+
+#createreasonform{
+
+    padding:10px;
+    background:#fff;
+    margin: 100px auto;
+    width:1000px;
+}
+
+.list-title{
+    color: #49C2EF;
+    border-bottom: 4px solid #49C2EF;
+    text-align:center;
+    width:90% ;
+    margin:0 auto;
+}
+
+#ans{
+    margin: 50px auto;
+    text-align: center;
+    font-size:30px;
+    color:#0B5F7E;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-bottom:1px solid #49C2EF;
+    width:80%;
+}
+
+
+#reasonform{
+    text-align:center;
+}
+
+::placeholder {
+  color: #0B5F7E;
+}
+#reasonform input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #49C2EF;
+    width:60%;
+    height:20px;
+    text-align: center;
+}
+
+#reasonform button{
+    background:#fff;
+    color:#49C2EF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border:solid 1px #49C2EF;
+    margin: 20px;
+}
+
+#reasonform button:hover{
+    cursor: pointer;
+    background: #49C2EF;
+    color:#FFF;
+}

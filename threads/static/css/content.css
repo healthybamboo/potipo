@@ -1,0 +1,364 @@
+#content{
+    margin-top:50px;
+    margin-left:auto;
+    margin-right: auto;
+}
+.info1{
+    width:20%;
+    margin: 0;
+    text-align: center;
+}
+.text{
+    margin: 0;
+    text-align: center;
+    width:60%;
+}
+.info2{
+    margin: 0;
+    width:20%;
+    text-align: center;
+}
+.info3{
+  margin: 0;
+  text-align: center;
+  color:#0B5F7E;
+  width:80%;
+}
+@media screen and (min-width:961px) {
+  .board{
+      padding:10px;
+      background:#fff;
+      margin: 0 auto;
+      /* height:650px; */
+      width:80%;
+      max-width: 1000px;
+      margin-bottom:100px;
+  }
+  #status{
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    color: #0B5F7E;
+    border-bottom: 1px solid #49C2EF;
+    width:60%;
+  }
+  #category{
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    color: #0B5F7E;
+    border-bottom: 1px solid #49C2EF;
+    width:70%;
+  }
+
+}
+@media only screen and (min-width:376px) and (max-width:960px) {
+/*tablet用のcssを記述*/
+.board{
+    padding-top:5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    background:#fff;
+    margin: 0 auto;
+    /* height:650px; */
+    width:100%;
+    margin-bottom:100px;
+}
+  #status{
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    color: #0B5F7E;
+    border-bottom: 1px solid #49C2EF;
+    width:60%;
+  }
+  #category{
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    color: #0B5F7E;
+    border-bottom: 1px solid #49C2EF;
+    width:70%;
+  }
+
+}
+
+ @media screen and (max-width:375px) {
+   .board{
+        padding-top:3px;
+        padding-bottom: 3px;
+       font-size: 10px;
+       background:#fff;
+       margin: 0 auto;
+       /* height:650px; */
+       width:100%;
+       margin-bottom:100px;
+   }
+/*スマホ用のcssを記述*/
+  #status{
+    margin: 0 auto;
+    /* display: flex; */
+    text-align: center;
+    justify-content: center;
+    color: #0B5F7E;
+    border-bottom: 1px solid #49C2EF;
+    width:85%;
+  }
+  #category{
+    margin: 50px auto ;
+    /* display: flex; */
+    justify-content: center;
+    color: #0B5F7E;
+    border-bottom: 1px solid #49C2EF;
+    width: 90%;
+    text-align: center;
+  }
+  #category p label{
+    display: none;
+  }
+  .info1{
+      display: none;
+  }
+  .text{
+      margin: 0 auto;
+      text-align: center;
+      width:100%;
+  }
+  .info2{
+      display: none;
+  }
+  .info3{
+    width: 100%;
+  }
+
+ }
+
+.list-title{
+    color: #49C2EF;
+    border-bottom: 4px solid #49C2EF;
+    text-align:center;
+    width:90% ;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.questions{
+    padding: 0;
+    padding-bottom: 20px;
+    list-style:none;
+    margin: 0;
+}
+
+
+#questiontext{
+  margin: 0 auto;
+  text-align: center;
+  color:#0B5F7E;
+  height:50px;
+  border-bottom:1px solid #49C2EF;
+  width:85%;
+}
+.question{
+    display: flex;
+    align-items: flex-end;
+    margin:0 auto;
+    color:#0B5F7E;
+    height:50px;
+    border-bottom:1px solid #49C2EF;
+    width:80%;
+}
+.question:hover{
+    cursor:pointer;
+    background:#EEE;
+}
+
+.link{
+    margin-top: 2%;
+    text-align: center ;
+}
+.morelink{
+    color:#49C2EF;
+    margin: 0 auto;
+    text-decoration: none;
+
+}
+
+.gad{
+    width:728px;
+    height:90%;
+}
+
+.pagination{
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+
+}
+
+.page-link{
+  margin: 8px;
+  padding:8px;
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color:#49C2EF;
+  text-decoration: none;
+  border-radius: 3px;
+  border: solid 1px #49C2EF;
+}
+.page-link:hover{
+  color: #FFF;
+  background: #49C2EF;
+}
+
+.page-link-disabled{
+  color: #FFF;
+}
+
+.where{
+  padding: 5px;
+  color:#0B5F7E;
+}
+
+/*検索機能関係*/
+#searchbox{
+      user-select: none;
+      background: #FFF;
+      padding:10px;
+      background:#fff;
+      margin: 100px auto;
+      height:500px;
+      width:1000px;
+      text-align: center;
+}
+#word {
+  text-align: center;
+
+}
+#word input{
+      text-align: center;
+      margin-top:20px;
+      border-top: none;
+      border-left:none;
+      border-right: none;
+      border-bottom: 1px solid #49C2EF;
+      width:60%;
+      height: 20px;
+  }
+
+::placeholder {
+    color: #0B5F7E;
+}
+
+
+
+#status p{
+  margin-bottom: 0;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+#status input{
+  border: 1px solid #0B5F7E;
+}
+
+#category p{
+  margin-bottom: 0;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+#category select{
+  color: #0B5F7E;
+  border:solid 1px #0B5F7E;
+}
+
+#orderzone{
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  color: #0B5F7E;
+  border-bottom: 1px solid #49C2EF;
+  width:60%;
+}
+
+#orderzone select{
+  color: #0B5F7E;
+  border:1px solid #0B5F7E;
+}
+
+
+/*汎用ボタン（中心)*/
+.btnzone{
+  text-align: center;
+}
+#btn{
+  margin: 2% auto;
+  cursor: pointer;
+  background:#FFF;
+  color: #49C2EF;
+  border: 1px solid #49C2EF;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
+#btn:hover{
+  color:#FFF;
+  background: #49C2EF;
+}
+
+.voteobname{
+  margin: 50px auto;
+  text-align: center;
+  font-size:30px;
+  color:#0B5F7E;
+  border-top:none;
+  border-left: none;
+  border-right: none;
+  border-bottom:1px solid #49C2EF;
+  width:80%;
+}
+.forms{
+    text-align:center;
+}
+
+::placeholder {
+  color: #0B5F7E;
+}
+.forms input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #49C2EF;
+    width:60%;
+    height:20px;
+    text-align: center;
+}
+
+.forms button{
+    background:#fff;
+    color:#49C2EF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border:solid 1px #49C2EF;
+    margin: 20px;
+}
+
+.forms button:hover{
+    cursor: pointer;
+    background: #49C2EF;
+    color:#FFF;
+}

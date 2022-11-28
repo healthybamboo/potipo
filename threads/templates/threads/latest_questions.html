@@ -1,0 +1,50 @@
+{% extends 'threads/base.html' %}
+{% load static %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/content.css' %}">
+  <div id ="content">
+    <div class="board">
+      <h1 class="list-title">新着</h1>
+      <ul class="questions">
+        {% for question in questions %}
+          <li class="question"
+              onclick="location.href='{% url 'threads:detail_question' question.id %}'">
+            {% with id=question.id %}<p class="info1">{{ question.created_time|date:"m/j H:i" }}</p>{% endwith %}
+            <p class="text">{{ question.text | truncatechars:30 }}</p>
+            <p class="info2">回答期限{{ question.reply_dead_line.month }}/{{ question.reply_dead_line.day }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="link">
+        {% if questions.has_other_pages %}
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              {% if questions.has_previous %}
+                <li>
+                  <a class="page-link" href="?page={{ questions.previous_page_number }}"> < </a>
+                </li>
+              {% else %}
+                <li>
+                  <div class="page-link-disabled" href="#">
+                    <
+                  </div>
+                </li>
+              {% endif %}
+              <li class="where">{{ questions.number }} / {{ page_num }}</li>
+              {% if questions.has_next %}
+                <li>
+                  <a class="page-link" href="?page={{ questions.next_page_number }}">></a>
+                </li>
+              {% else %}
+                <li>
+                  <div class="page-link-disabled " href="#">></div>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <!-- <script src="{% static 'js/latestquestions.js'%}"></script> -->
+{% endblock %}

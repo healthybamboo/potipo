@@ -1,0 +1,65 @@
+/*ここまでは共通部分*/
+
+#createansform{
+
+    padding:10px;
+    background:#fff;
+    margin: 100px auto;
+    width:1000px;
+}
+
+.list-title{
+    color: #49C2EF;
+    border-bottom: 4px solid #49C2EF;
+    text-align:center;
+    width:90% ;
+    margin:0 auto;
+}
+
+#question{
+    margin: 50px auto;
+    text-align: center;
+    font-size:30px;
+    color:#0B5F7E;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-bottom:1px solid #49C2EF;
+    width:80%;
+}
+
+#ansform{
+    text-align:center;
+}
+
+::placeholder {
+  color: #0B5F7E;
+}
+
+
+#ansform input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #49C2EF;
+    width:60%;
+    height:20px;
+    text-align: center;
+
+}
+#ansform button{
+    cursor: pointer;
+    background:#FFF;
+    color:#49C2EF;
+    border:solid 1px #49C2EF;
+    margin: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:15px;
+    padding-right: 15px;
+}
+#ansform button:hover{
+    color: #FFF;
+    background: #49C2EF;
+
+}
