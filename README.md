@@ -74,4 +74,19 @@ python manage.py runserver xxxxx
 ```
 xxxx にはポート番号を入れる
 
+## 実行例
+### 1. 初期画面
+![top_first](documents/images/top_ss.png)
+
+### 2. 質問の追加画面
+![top_first](documents/images/question_ss.png)
+
+### 3. 投票画面
+![top_first](documents/images/vote_ss.png)
+
+### 4. 投票結果
+![top_first](documents/images/result_ss.png)
+
+### 5. 追加後のトップ画面
+![top_first](documents/images/top2_ss.png)
 
