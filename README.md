@@ -17,7 +17,7 @@ POTIPO_MYSQL_PASSWORD=<MySQLユーザのパスワード>
 potipo/PotiPo/フォルダ内にsettings_local.pyを作成し、以下の内容を加える
 ```plainText
 # Djangoの秘密キー
-SECRET_KEY='y*qhd5^=sj4fvq-b8d+$!h9mt4ls5&h)i51(@ei9sp#+@%3-mi'
+SECRET_KEY='<秘密鍵を設定する>'
 
 # DB接続情報
 DATABASES = {
@@ -36,6 +36,7 @@ DATABASES = {
 }
 
 ```
+秘密鍵については、後程生成するものを設定してください。
 ユーザー名とパスワードには、環境変数に設定したものと同じものを基本的には設定してください。
 <br>
 <br>
@@ -56,13 +57,23 @@ docker-compose up --build -d
 docker exec -it potipo bash
 ```
 
-### 4. コンテナ内でシェルコマンドを実行する
+### 4. 秘密鍵を生成する
+```sh
+python
+>> from django.core.management.utils import get_random_secret_key  
+>> get_random_secret_key()
+　<生成された秘密鍵>
+```
+コンテナ内で上記のコマンドを実行することにより、秘密鍵が生成されます。<br>
+それをコピーし、前準備：手順２で作成したsettings_local.pyに貼り付けてください。
+
+### 5. コンテナ内でシェルコマンドを実行する
 ```sh
 sh /home/init.sh
 ```
 これにより、migrate、初期データの追加が行われます。
 
-### 　5. アプリケーションの起動
+### 　6. アプリケーションの起動
 ```sh
 python manage.py runserver
 ```
@@ -72,7 +83,7 @@ python manage.py runserver
 ```sh
 python manage.py runserver xxxxx
 ```
-xxxx にはポート番号を入れる
+xxxxx にはポート番号を入れる
 
 ## 実行例
 ### 1. 初期画面
