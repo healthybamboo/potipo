@@ -1,0 +1,75 @@
+[
+    {
+        "model": "threads.answer",
+        "pk": 1,
+        "fields": {
+            "text": "ハロー",
+            "parent_question": 1,
+            "vote": 1
+        }
+    },
+    {
+        "model": "threads.answer",
+        "pk": 2,
+        "fields": {
+            "text": "ワールド",
+            "parent_question": 1,
+            "vote": 0
+        }
+    },
+    {
+        "model": "threads.answer",
+        "pk": 3,
+        "fields": {
+            "text": "キノコ",
+            "parent_question": 2,
+            "vote": 1
+        }
+    },
+    {
+        "model": "threads.answer",
+        "pk": 4,
+        "fields": {
+            "text": "タケノコ",
+            "parent_question": 2,
+            "vote": 0
+        }
+    },
+    {
+        "model": "threads.answer",
+        "pk": 5,
+        "fields": {
+            "text": "アウトドア",
+            "parent_question": 3,
+            "vote": 1
+        }
+    },
+    {
+        "model": "threads.answer",
+        "pk": 6,
+        "fields": {
+            "text": "インドア",
+            "parent_question": 3,
+            "vote": 0
+        }
+    }
+    ,{
+        "model": "threads.answer",
+        "pk": 7,
+        "fields": {
+            "text": "夢",
+            "parent_question": 4,
+            "vote": 1
+        }
+    },
+    {
+        "model": "threads.answer",
+        "pk": 8,
+        "fields": {
+            "text": "現実",
+            "parent_question": 4,
+            "vote": 0
+        }
+    }
+
+]

@@ -1,0 +1,65 @@
+/*pages only */
+
+#content{
+    margin-top:50px;
+    margin-left:auto;
+    margin-right: auto;
+}
+.board{
+  color:  #0B5F7E;
+}
+
+
+@media screen and (min-width:961px) {
+  .board{
+      padding:10px;
+      background:#fff;
+      margin: 0 auto;
+      /* height:650px; */
+      width:80%;
+      max-width: 1000px;
+      margin-bottom:100px;
+  }
+}
+@media only screen and (min-width:376px) and (max-width:960px) {
+/*tablet用のcssを記述*/
+.board{
+    padding-top:5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    background:#fff;
+    margin: 0 auto;
+    /* height:650px; */
+    width:100%;
+    margin-bottom:100px;
+}
+}
+@media screen and (max-width:375px) {
+  .board{
+       padding-top:3px;
+       padding-bottom: 3px;
+      font-size: 10px;
+      background:#fff;
+      margin: 0 auto;
+      /* height:650px; */
+      width:100%;
+      margin-bottom:100px;
+  }
+}
+.list-title{
+    color: #49C2EF;
+    border-bottom: 4px solid #49C2EF;
+    text-align:center;
+    width:90% ;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.board h2{
+  text-align: center;
+}
+
+.board h3{
+   text-align:center;
+}

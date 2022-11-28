@@ -1,0 +1,322 @@
+[
+    {
+        "model": "threads.category",
+        "pk": 1,
+        "fields": {
+            "name": "芸能人",
+            "parent": 1
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 2,
+        "fields": {
+            "name": "テレビ、ラジオ",
+            "parent": 1
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 3,
+        "fields": {
+            "name": "音楽",
+            "parent": 1
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 4,
+        "fields": {
+            "name": "映画",
+            "parent": 1
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 5,
+        "fields": {
+            "name": "演劇、ミュージック",
+            "parent": 1
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 6,
+        "fields": {
+            "name": "アニメ、コミック",
+            "parent": 1
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 7,
+        "fields": {
+            "name": "ゲーム",
+            "parent": 1
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 8,
+        "fields": {
+            "name": "本、雑誌",
+            "parent": 1
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 9,
+        "fields": {
+            "name": "バイク",
+            "parent": 2
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 10,
+        "fields": {
+            "name": "自動車",
+            "parent": 2
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 11,
+        "fields": {
+            "name": "スポーツ",
+            "parent": 2
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 12,
+        "fields": {
+            "name": "自転車、サイクリング",
+            "parent": 2
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 13,
+        "fields": {
+            "name": "アウトドア",
+            "parent": 2
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 14,
+        "fields": {
+            "name": "家事",
+            "parent": 3
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 15,
+        "fields": {
+            "name": "住宅",
+            "parent": 3
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 16,
+        "fields": {
+            "name": "ショッピング",
+            "parent": 3
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 17,
+        "fields": {
+            "name": "法律",
+            "parent": 3
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 18,
+        "fields": {
+            "name": "ペット",
+            "parent": 3
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 19,
+        "fields": {
+            "name": "健康、病気、病院",
+            "parent": 4
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 20,
+        "fields": {
+            "name": "ダイエット、フィットネス",
+            "parent": 4
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 21,
+        "fields": {
+            "name": "コスメ、美容",
+            "parent": 4
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 22,
+        "fields": {
+            "name": "ファッション",
+            "parent": 4
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 23,
+        "fields": {
+            "name": "子育て、出産",
+            "parent": 5
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 24,
+        "fields": {
+            "name": "幼稚園、保育園",
+            "parent": 5
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 25,
+        "fields": {
+            "name": "小中高",
+            "parent": 5
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 26,
+        "fields": {
+            "name": "大学",
+            "parent": 5
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 27,
+        "fields": {
+            "name": "留学",
+            "parent": 5
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 28,
+        "fields": {
+            "name": "受験・進学",
+            "parent": 5
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 29,
+        "fields": {
+            "name": "不登校",
+            "parent": 5
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 30,
+        "fields": {
+            "name": "政治・社会問題",
+            "parent": 6
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 31,
+        "fields": {
+            "name": "国際情勢",
+            "parent": 6
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 32,
+        "fields": {
+            "name": "不祥事",
+            "parent": 6
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 33,
+        "fields": {
+            "name": "災害",
+            "parent": 6
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 34,
+        "fields": {
+            "name": "エネルギー、資源",
+            "parent": 6
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 35,
+        "fields": {
+            "name": "職業",
+            "parent": 7
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 36,
+        "fields": {
+            "name": "就職・転職",
+            "parent": 7
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 37,
+        "fields": {
+            "name": "起業",
+            "parent": 7
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 38,
+        "fields": {
+            "name": "労働問題・働き方",
+            "parent": 7
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 39,
+        "fields": {
+            "name": "派遣・アルバイト・パート",
+            "parent": 7
+        }
+    },
+    {
+        "model": "threads.category",
+        "pk": 40,
+        "fields": {
+            "name": "資格習い事",
+            "parent": 7
+        }
+    }
+]

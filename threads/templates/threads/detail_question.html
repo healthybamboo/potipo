@@ -1,0 +1,25 @@
+{% extends 'threads/base.html' %}
+{% load static %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/vote.css' %}">
+  <link rel="stylesheet" href="{% static 'css/content.css' %}">
+  <div class="board">
+    <h1 class="list-title">投票</h1>
+    <p class="votetitle">Q.{{ question.text }}</p>
+    <form action="{% url 'threads:va' %}" method="POST" id ="voteform">
+      {% for answer in answers %}
+        {% csrf_token %}
+        <p>
+          <button type="submit" class="votebtn" name="id" value="{{ answer.id }}">{{ answer.text }}</button>
+        </p>
+      {% endfor %}
+    </form>
+    {% if question.let_answer_add %}
+      <div class="link">
+        <a id="morelink" href="{% url 'threads:ca' question.id %}">選択肢を追加</a>
+      </div>
+    {% else %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

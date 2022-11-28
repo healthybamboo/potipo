@@ -1,0 +1,51 @@
+[
+    {
+        "model": "threads.parentcategory",
+        "pk": 1,
+        "fields": {
+            "name": "エンタメ"
+        }
+    },
+    {
+        "model": "threads.parentcategory",
+        "pk": 2,
+        "fields": {
+            "name": "スポーツ"
+        }
+    },
+    {
+        "model": "threads.parentcategory",
+        "pk": 3,
+        "fields": {
+            "name": "暮らしと生活"
+        }
+    },
+    {
+        "model": "threads.parentcategory",
+        "pk": 4,
+        "fields": {
+            "name": "健康"
+        }
+    },
+    {
+        "model": "threads.parentcategory",
+        "pk": 5,
+        "fields": {
+            "name": "教育"
+        }
+    },
+    {
+        "model": "threads.parentcategory",
+        "pk": 6,
+        "fields": {
+            "name": "政治"
+        }
+    },
+    {
+        "model": "threads.parentcategory",
+        "pk": 7,
+        "fields": {
+            "name": "仕事"
+        }
+    }
+]

@@ -1,0 +1,44 @@
+{% extends 'threads/base.html' %}
+{% load static %}
+{% load lookup %}
+{% block content %}
+  <link rel ="stylesheet" href="{% static 'css/content.css' %}">
+  <div id ="content">
+    <div class="board">
+      <h1 class="list-title">新着</h1>
+      <ul class="questions">
+        {% for latestquestion in latestquestions %}
+          <li class="question"
+              onclick="location.href='{% url 'threads:detail_question' latestquestion.id %}'">
+            {% with id=latestquestion.id %}<p class="info1">{{ ctime|lookup:id }}</p>{% endwith %}
+            <p class="text">{{ latestquestion.text | truncatechars:20 }}</p>
+            <p class="info2">回答期限:{{ latestquestion.reply_dead_line.month }}/{{ latestquestion.reply_dead_line.day }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="link">
+        <a href ="{% url 'threads:latest_question' %}" class="morelink">更に表示する</a>
+      </div>
+    </div>
+    <div id="advertising_zone" style="justify-content: space-between;">
+      <!-- <img style="margin-top: 50px;margin-left:100px;margin-right:100px;"src="{% static 'photo/画像.jpg'%}">
+          <img style="margin-top: 50px;margin-left:100px;margin-right:100px;"src ="{% static 'photo/画像２.png'%}">
+          -->
+    </div>
+    <div class="board">
+      <h1 class="list-title">話題</h1>
+      <ul class="questions">
+        {% for populerquestion in populerquestions %}
+          <li class="question"
+              onclick="location.href='{% url 'threads:detail_question' populerquestion.id %}">
+            <p class="info1">回答数:{{ populerquestion.all_answer_numbers }}</p>
+            <p class="text">{{ populerquestion.text | truncatechars:20 }}</p>
+            <p class="info2">回答期限:{{ populerquestion.reply_dead_line.month }}/{{ populerquestion.reply_dead_line.day }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="link">
+        <a href="{% url 'threads:popular_question' %}"class="morelink">更に表示する</a>
+      </div>
+    </div>
+  {% endblock %}

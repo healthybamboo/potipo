@@ -1,0 +1,163 @@
+/*ここまでは共通部分*/
+
+#createquestionform{
+
+    padding:10px;
+    background:#fff;
+    margin: 100px auto;
+    max-width:1000px;
+    width: 80%;
+}
+
+.list-title{
+    user-select: none;
+    color: #49C2EF;
+    border-bottom: 4px solid #49C2EF;
+    text-align:center;
+    width:90% ;
+    margin:0 auto;
+}
+label{
+    color:#0B5F7E
+}
+#letform{
+    justify-content: center;
+    display:flex;
+    margin:0 auto;
+    border-bottom: 1px solid #49C2EF;
+    width:80%;
+}
+#letform p{
+    margin-top:30px;
+    margin-bottom:0;
+    margin-left:50px;
+    margin-right:50px;
+}
+
+
+#letform input{
+    border:1px solid #49C2EF;}
+
+
+#textform{
+    text-align:center;
+}
+
+#categoryform{
+    justify-content: center;
+  display: flex;
+}
+
+#categoryform p{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#qtext{
+    text-align: center;
+    margin-top:20px;
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    border-bottom: 1px solid #49C2EF;
+    width:80%;
+    height: 20px;
+}
+
+.answer_create_form{
+    text-align:center;
+    margin-top:20px;
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    border-bottom: 1px solid #49C2EF;
+    width:60%;
+    height: 20px;
+}
+
+::placeholder {
+  color: #0B5F7E;
+}
+
+#more{
+    text-align:center;
+
+}
+#moreanswer{
+    margin:20px;
+    cursor:pointer;
+    border: none ;
+    color: #49C2EF;
+    background:#fff;
+}
+
+#submitbtn{
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 5px auto;
+  color:#49C2EF;
+  background: #fff;
+  border: 1px solid #49C2EF;
+}
+
+#submitbtn:hover{
+  color: #FFF;
+  background: #49C2EF;
+}
+@media only screen and (min-width:376px) and (max-width:960px) {
+/*tablet用のcssを記述*/
+  #createquestionform{
+      padding: 0;
+      padding-top: 5px;
+      font-size: 15px;
+      background:#fff;
+      margin: 100px 0;
+      /* height:650px; */
+      width:100%;
+  }
+  #letform{
+    display: block;
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  #letform p{
+    margin: 0;
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width:375px) {
+  #createquestionform{
+      padding: 0;
+      padding-top: 3px;
+      font-size: 10px;
+      background:#fff;
+      margin: 50px 0;
+      width:100%;
+  }
+  #letform{
+    display: block;
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  #letform p{
+    margin: 0;
+    margin-top: 15px;
+  }
+  #categoryform{
+    text-align: center;
+    margin: 0;
+    margin-top: 20px;
+    display:block;
+  }
+  #categoryform p{
+    display: block;
+  }
+  #categoryform p label{
+    display: none;
+  }
+
+}

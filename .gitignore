@@ -1,0 +1,8 @@
+__pycache__
+data/
+tmp/
+.DS_Store
+local
+*.pyc
+.env
+settings_local.py

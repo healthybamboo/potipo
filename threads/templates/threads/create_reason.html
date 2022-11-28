@@ -1,0 +1,19 @@
+{% extends 'threads/base.html' %}
+{% load static %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/content.css' %}">
+  <div class="board">
+    <div id="createreasonform">
+      <h1 class="list-title">理由を作成</h1>
+      <p class="voteobname">A.{{ answer.text }}</p>
+      <form action="{% url 'threads:cr' answer.id %}"
+            class="forms"
+            method="POSt">
+        {% csrf_token %}
+        {{ form.text }}
+      </br>
+      <button type="submit">作成</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

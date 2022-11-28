@@ -1,0 +1,69 @@
+[
+    {
+        "model": "threads.question",
+        "pk": 1,
+        "fields": {
+            "text": "ハローワールド",
+            "reply_dead_line": "2022-11-27T14:59:59Z",
+            "all_answer_numbers": 1,
+            "let_answer_add": false,
+            "let_reason_add": false,
+            "parent_category": 2,
+            "category": 9,
+            "original_question": 0,
+            "created_time": "2022-11-26T05:50:14.343Z",
+            "question_active": true
+        }
+    },
+    {
+        "model": "threads.question",
+        "pk": 2,
+        "fields": {
+            "text": "キノコかタケノコか",
+            "reply_dead_line": "2022-11-27T14:59:59Z",
+            "all_answer_numbers": 1,
+            "let_answer_add": false,
+            "let_reason_add": true,
+            "parent_category": 2,
+            "category": 9,
+            "original_question": 0,
+            "created_time": "2022-11-26T05:50:14.343Z",
+            "question_active": true
+        }
+    },
+    {
+        "model": "threads.question",
+        "pk": 3,
+        "fields": {
+            "text": "アウトドアかインドアか",
+            "reply_dead_line": "2022-11-27T14:59:59Z",
+            "all_answer_numbers": 1,
+            "let_answer_add": true,
+            "let_reason_add": false,
+            "parent_category": 2,
+            "category": 9,
+            "original_question": 0,
+            "created_time": "2022-11-26T05:50:14.343Z",
+            "question_active": true
+        }
+    },
+    {
+        "model": "threads.question",
+        "pk": 4,
+        "fields": {
+            "text": "夢か現実か",
+            "reply_dead_line": "2022-11-27T14:59:59Z",
+            "all_answer_numbers": 0,
+            "let_answer_add": true,
+            "let_reason_add": true,
+            "parent_category": 2,
+            "category": 9,
+            "original_question": 0,
+            "created_time": "2022-11-26T05:50:14.343Z",
+            "question_active": true
+        }
+    }
+]
+
+
+    
