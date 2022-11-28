@@ -27,7 +27,6 @@ services:
       # command: /home/wait-for-it.sh -h mysql -p 3306 --timeout=30 --strict -- /home/init.sh
       ports:
          - 8000:8000
-         - 12345:12345
       tty: true
       stdin_open: true
 volumes:
