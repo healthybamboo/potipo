@@ -59,7 +59,7 @@ class TestQuestionDetail(TesTemp):
         c = client.Client()
         response = c.get('/question/1')
         
-        response.status_code == 302
+        assert response.status_code == 301 or response.status_code == 302
     
 
 # 新着質問ページのテスト
